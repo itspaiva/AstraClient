@@ -278,7 +278,7 @@ Panel
       margin-top: 2
       font: cipsoftFont
       enabled: false
-      @onClick: ForgeSystem.rateSuccessActive = not ForgeSystem.rateSuccessActive; ForgeSystem.checkFusionLabels()
+      @onClick: modules.game_forge.ForgeSystem.rateSuccessActive = not modules.game_forge.ForgeSystem.rateSuccessActive; modules.game_forge.ForgeSystem.checkFusionLabels(); modules.game_forge.ForgeSystem.checkFusionButtons()
 
     Panel
       id: improveRateSuccessPanel
@@ -331,9 +331,8 @@ Panel
       margin-left: 5
       margin-top: 2
       font: cipsoftFont
-      opacity: 0.7
       enabled: false
-      @onClick: ForgeSystem.tierLossActive = not ForgeSystem.tierLossActive; ForgeSystem.checkFusionLabels()
+      @onClick: modules.game_forge.ForgeSystem.tierLossActive = not modules.game_forge.ForgeSystem.tierLossActive; modules.game_forge.ForgeSystem.checkFusionLabels(); modules.game_forge.ForgeSystem.checkFusionButtons()
 
     Panel
       id: tierLossPanel

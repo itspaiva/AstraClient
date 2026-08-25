@@ -23,6 +23,8 @@ ForgeSystem.inForgeFusion = false
 ForgeSystem.fusionPrice = 0
 ForgeSystem.exaltedCoreCount = 0
 ForgeSystem.fusionTier = 0
+ForgeSystem.rateSuccessActive = false
+ForgeSystem.tierLossActive = false
 
 ForgeSystem.fusionData = {}
 ForgeSystem.fusionConvergenceData = {}
@@ -550,6 +552,15 @@ function ForgeSystem.checkFusionLabels()
 
 	fusionMenu.itemsFusion.tierLossLabel:setText(ForgeSystem.tierLossActive and ForgeSystem.tierLoss .. "%" or "100%")
 	fusionMenu.itemsFusion.tierLossLabel:setColor(ForgeSystem.tierLossActive and "#44ad25" or "#d33c3c")
+
+	if fusionMenu and fusionMenu.itemsFusion then
+		if fusionMenu.itemsFusion.improveRateSuccessButton then
+			fusionMenu.itemsFusion.improveRateSuccessButton:setChecked(ForgeSystem.rateSuccessActive)
+		end
+		if fusionMenu.itemsFusion.tierLossButton then
+			fusionMenu.itemsFusion.tierLossButton:setChecked(ForgeSystem.tierLossActive)
+		end
+	end
 end
 
 -- reset variables
